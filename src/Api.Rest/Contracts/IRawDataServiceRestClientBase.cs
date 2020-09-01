@@ -93,6 +93,14 @@ namespace Zeiss.PiWeb.Api.Rest.Contracts
 		Task<RawDataArchiveEntriesDto[]> RawDataArchiveEntryQuery( RawDataBulkQueryDto query, CancellationToken cancellationToken = default );
 
 		/// <summary>
+		/// Fetches multiple lists of entries for queried raw data objects if they are archives of known format.
+		/// </summary>
+		/// <param name="rawDataInfo">Raw data information of requested archives.</param>
+		/// <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
+		/// <returns></returns>
+		Task<RawDataArchiveEntriesDto[]> RawDataArchiveEntryQuery( RawDataInformationDto[] rawDataInfo, CancellationToken cancellationToken = default );
+
+		/// <summary>
 		/// Fetches file as byte array of specified raw data if it is part of an archive of known format.
 		/// </summary>
 		/// <param name="targetEntity">The <see cref="RawDataTargetEntityDto"/> that specifies the archive</param>
